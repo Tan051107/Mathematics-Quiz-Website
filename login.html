@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathMind - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="headernew.css">
+    <script type="text/javascript" src="darkmode.js" defer></script>
+    <style>
+        .darkmode .login-box {
+            background: #232738;
+            border: 2px white;   
+        }
+        .darkmode .login-box input{
+            background: #3a435d;  
+            color: white;
+        }
+        .darkmode .login-box::placeholder{
+            color: lightgrey;  
+        }
+        .darkmode .modal-content {
+            background: #232738;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navibar">
+            <a href="mainpage.php" class="navi-logo">
+                <img src="images/horizontal-logo.png" alt="Logo">
+            </a> 
+            
+            <div class="auth-buttons">
+                
+                <button id="theme-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                        <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                        <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
+                    </svg>
+                </button>
+
+                
+
+            </div>
+        </nav>
+    </header>
+    <hr>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2 style="font-size: 30px;">Welcome Back</h2>
+            <p>Please log in to continue</p>
+            <form action="login.php" method="POST">
+                <div class="email-row">
+                    <input type="email" name="txtEmail" placeholder="Email Address" required>
+                </div>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="txtPassword" placeholder="Password" required>
+                    <span onclick="togglePassword()">👁</span>
+                </div>
+                <p class="forgot-password"></p>
+                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                <div id="forgot-password-modal" class="modal">
+                    <div class="modal-content">
+                        <h2>Forgotten your password?</h2>
+                        <p>There is nothing to worry about, please reach out to <br> <strong>admin@mathmind.com</strong> to change the password.</p>
+                        <button id="close-modal">OK</button>
+                    </div>
+                </div>
+                <button type="submit">Log In</button>
+                <p>No account yet? <a href="signup.html">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("forgot-password-modal");
+            const openModal = document.getElementById("forgot-password-link");
+            const closeModal = document.getElementById("close-modal");
+
+            openModal.addEventListener("click", function (event) {
+                event.preventDefault();
+                modal.style.display = "flex";
+            });
+
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+
+        function togglePassword() {
+        var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+        passwordField.type = "text";
+             } else {
+        passwordField.type = "password";
+            }
+        }
+        
+
+
+
+    </script>
+
+</body>
+</html>
