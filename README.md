@@ -1,10 +1,21 @@
-### 1. Project Setup 
-```bash
+### 1. Clone the Repository
 
+Open a terminal and run the following command:
+
+```bash
+git clone https://github.com/Tan051107/Mathematics-Quiz-Website.git
 ```
 
+### 2. Navigate to the Project Directory
 
-### 1. Database Setup
+```bash
+cd Mathematics-Quiz-Website
+```
+
+---
+
+
+### 3. Database Setup
 
 1. **Create Database**
 
@@ -47,7 +58,7 @@
 
 ---
 
-### 2. Add Background Music
+### 4. Add Background Music
 
 - Add your preferred background music to the root folder and name it song.mp3 
 
